@@ -1,0 +1,63 @@
+
+##Ejercicio 2
+* Mapa de 5*6
+* Se inicia en el campo 1-6
+* se deben pintar la casillas negras de blanco desde 2-1 hasta 6-5
+* Se debe pintar de negro las casillas rojas de la primera fila a excepción de la 1-2
+
+programa{
+    LimpiarPlaza
+}
+
+procedimiento VerificarSiHayBasura {
+    si estaPintadaDeNegro? entonces {
+        Limpiar
+    }
+}
+
+procedimiento LimpiarDeIzqADerEIrASiguienteFila {
+    VerificarSiHayBasura
+
+    repetir4Veces{
+        MoverDerecha
+        VerificarSiHayBasura
+    }
+
+    MoverAbajo
+}
+
+procedimiento LimpiarDeDerAIzqEIrASiguienteFila {
+    VerificarSiHayBasura
+    
+    repetir4Veces{
+        MoverIzquierda
+        VerificarSiHayBasura
+    }
+
+    MoverAbajo
+}
+
+procedimiento VerificarSiHaySesto {
+    si estaPintadaDeRojo? entonces {
+        PintarDeNegro
+    }
+}
+
+procedimiento DepositarBasuraAlSesto { 
+    repetir3Veces {
+        VerificarSiHaySesto
+        MoverIzquierda
+    }
+
+    MoverIzquierda
+    VerificarSiHaySesto
+}
+
+procedimiento LimpiarPlaza(){
+    LimpiarDeIzqADerEIrASiguienteFila
+    LimpiarDeDerAIzqEIrASiguienteFila
+    LimpiarDeIzqADerEIrASiguienteFila
+    LimpiarDeDerAIzqEIrASiguienteFila
+    LimpiarDeIzqADerEIrASiguienteFila
+    DepositarBasuraAlSesto
+}

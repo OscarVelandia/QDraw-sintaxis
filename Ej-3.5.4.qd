@@ -1,0 +1,61 @@
+##Hacer Dibujo
+*Se empieza desde el espacio 1-1
+
+programa {
+    PrimerDibujo
+    IrASiguienteDibujo
+    SegundoDibujo
+    IrASiguienteDibujo
+    PrimerDibujo
+}
+
+procedimiento PintarDeNegro {
+    PintarNegro
+
+    repetir5Veces {
+        MoverDerecha
+        PintarNegro
+    }
+}
+
+procedimiento PintarDeVerde {
+    repetir4Veces {
+        MoverIzquierda
+        PintarVerde
+    }
+
+    MoverIzquierda
+}
+
+
+procedimiento IrASiguienteDibujo {
+    repetir7Veces {
+        MoverDerecha
+    }
+}
+
+procedimiento PrimerDibujo {
+    repetir2Veces {
+        PintarDeNegro
+        MoverArriba
+        PintarDeVerde
+        MoverArriba
+    }
+    
+    PintarDeNegro
+    MoverArriba
+    PintarDeVerde     
+}
+
+procedimiento SegundoDibujo {
+    repetir2Veces {
+        PintarDeNegro
+        MoverAbajo
+        PintarDeVerde
+        MoverAbajo
+    }
+
+    PintarDeNegro
+    MoverAbajo
+    PintarDeVerde    
+}

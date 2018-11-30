@@ -1,0 +1,68 @@
+##Ejercicio 3
+* Se debe verificar que la nota esperada coincida con la nota del piano
+* Se hace con 88 notas con ciclos de 12 hasta donde alcance 
+* Se harán 7 ciclos + 4 teclas (negro-blanco-negro-blanco)
+* Iniciaré en la Nota piano 3-1
+
+programa {
+    VerificarAfinacionDePiano
+}
+
+procedimieto MarcarNotaDesafinadaYVolverAlPiano {
+    repetir2Veces {
+        MoverAbajo
+    }
+    
+    PintarRojo
+
+    repetir2Veces {
+        MoverArriba
+    }
+}
+
+procedimiento VerificarSiAfinaNegra {
+    si ¬estaPintadoDeNegro? entonces {
+        MarcarNotaDesafinadaYVolverAlPiano
+    }
+
+    MoverDerecha
+}
+
+procedimiento VerificarSiAfinaBlanca {
+    si ¬estaVacia? entonces {
+        MarcarNotaDesafinadaYVolverAlPiano
+    }
+
+    MoverDerecha
+}
+
+procedimiento VerificarNegraBlancaNegraBlanca {
+    VerificarSiAfinaNegra
+    VerificarSiAfinaBlanca
+    VerificarSiAfinaNegra
+    VerificarSiAfinaBlanca
+}
+
+procedimiento VerificarBlancaNegraBlancaNegra {
+    VerificarSiAfinaBlanca
+    VerificarSiAfinaNegra
+    VerificarSiAfinaBlanca
+    VerificarSiAfinaNegra
+}
+
+procedimiento VerificarBlancaBlancaNegraNegra {
+    VerificarSiAfinaBlanca
+    VerificarSiAfinaBlanca
+    VerificarSiAfinaNegra
+    VerificarSiAfinaNegra
+}
+
+procedimiento VerificarAfinacionDePiano {
+    repetir7Veces {
+        VerificarNegraBlancaNegraBlanca
+        VerificarBlancaNegraBlancaNegra
+        VerificarBlancaBlancaNegraNegra
+    }
+
+    VerificarNegraBlancaNegraBlanca
+}

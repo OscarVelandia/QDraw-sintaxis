@@ -1,0 +1,58 @@
+##Mover marciano
+
+* Tablero de 5*10
+* Llevar al marciano por el camino delineado
+* Pintar las casillas Rojas de verde, estas pueden estar en cualquier parte del Tablero
+
+Programa {
+    ReparandoLaNave
+}
+
+procedimiento IrAlInicioDelCamino {
+    repetir3Veces {
+        MoverArriba
+    }
+}
+
+procedimiento VerificarSiCombustible {
+    si estaPintadaDeRojo? entonces {
+        PintarVerde
+    }
+}
+
+procedimiento MoverALaDerecha {
+    repetir4veces {
+        VerificarSiCombustible
+        MoverDerecha
+    }
+
+    VerificarSiCombustible
+}
+
+procedimiento IrALaSiguienteFila {
+    MoverArriba
+    VerificarSiCombustible
+    MoverArriba
+}
+
+procedimiento MoverALaIzquierda {
+    repetir4Veces {
+        VerificarSiCombustible
+        MoverIzquierda        
+    }
+    
+    VerificarSiCombustible
+}
+    
+procedimiento RecorrerTramo {
+    MoverALaDerecha
+    IrALaSiguienteFila
+    MoverALaIzquierda
+}
+
+procedimiento ReparandoLaNave {
+    IrAlInicioDelCamino
+    RecorrerTramo   
+    IrALaSiguienteFila
+    RecorrerTramo
+}
